@@ -24,3 +24,4 @@ max_lifetime = "300s"
 
 # Optional space separated Postgres DSN params. eg: "application_name=listmonk gssencmode=disable"
 params = ""
+Add and configure config.toml for Railway deployment

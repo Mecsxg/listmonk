@@ -4,8 +4,8 @@ address = "0.0.0.0"
 port = 8080
 
 [db]
-host = "${DB_HOST}"
-port = "${DB_PORT}"
+host = "crossover.proxy.rlwy.net"
+port = 31472
 user = "${DB_USER}"
 password = "${DB_PASSWORD}"
 

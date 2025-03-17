@@ -1,16 +1,19 @@
 [app]
-# Listen on all interfaces
-address = "0.0.0.0"
-port = 8080
+# Interface and port where the app will run its webserver.  The default value
+# of localhost will only listen to connections from the current machine. To
+# listen on all interfaces use '0.0.0.0'. To listen on the default web address
+# port, use port 80 (this will require running with elevated permissions).
+address = "0.0.0.0:9000"
 
+# Database.
 [db]
-host = "crossover.proxy.rlwy.net"
-port = 31472
-user = "${DB_USER}"
-password = "${DB_PASSWORD}"
+host = "postgres.railway.internal"
+port = 5432
+user = "postgres"
+password = "QXMonIjdfhouCVqSoZmUKimhNcsdDCNV"
 
 # Ensure that this database has been created in Postgres.
-database = "${DB_NAME}"
+database = "railway"
 
 ssl_mode = "require"
 max_open = 25

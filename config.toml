@@ -9,13 +9,13 @@ address = "localhost:9000"
 
 # Database.
 [db]
-host = "postgres.railway.internal"
-port = 5432
-user = "postgres"
-password = "QXMonIjdfhouCVqSoZmUKimhNcsdDCNV"
+host = "${DB_HOST}"         
+port = ${DB_PORT}           
+user = "${DB_USER}"         
+password = "${DB_PASSWORD}"
 
 # Ensure that this database has been created in Postgres.
-database = "railway"
+database = "${DB_NAME}"
 
 ssl_mode = "require"
 max_open = 25

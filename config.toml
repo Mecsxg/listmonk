@@ -9,15 +9,15 @@ address = "localhost:9000"
 
 # Database.
 [db]
-host = "localhost"
+host = "postgres.railway.internal"
 port = 5432
-user = "listmonk"
-password = "listmonk"
+user = "postgres"
+password = "QXMonIjdfhouCVqSoZmUKimhNcsdDCNV"
 
 # Ensure that this database has been created in Postgres.
-database = "listmonk"
+database = "railway"
 
-ssl_mode = "disable"
+ssl_mode = "require"
 max_open = 25
 max_idle = 25
 max_lifetime = "300s"

@@ -1,17 +1,12 @@
 [app]
+# Listen on all interfaces
 address = "0.0.0.0"
 port = 8080
-# Interface and port where the app will run its webserver.  The default value
-# of localhost will only listen to connections from the current machine. To
-# listen on all interfaces use '0.0.0.0'. To listen on the default web address
-# port, use port 80 (this will require running with elevated permissions).
-address = "localhost:9000"
 
-# Database.
 [db]
-host = "${DB_HOST}"         
-port = ${DB_PORT}           
-user = "${DB_USER}"         
+host = "${DB_HOST}"
+port = "${DB_PORT}"
+user = "${DB_USER}"
 password = "${DB_PASSWORD}"
 
 # Ensure that this database has been created in Postgres.

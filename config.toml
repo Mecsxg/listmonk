@@ -1,24 +1,17 @@
 [app]
-# Interface and port where the app will run its webserver.  The default value
-# of localhost will only listen to connections from the current machine. To
-# listen on all interfaces use '0.0.0.0'. To listen on the default web address
-# port, use port 80 (this will require running with elevated permissions).
-address = "localhost:9000"
+# 监听所有网络接口，允许外部访问
+address = "0.0.0.0:9000"
 
 # Database.
 [db]
-host = "localhost"
-port = 5432
-user = "listmonk"
-password = "listmonk"
+# 直接使用 Railway 提供的 PostgreSQL DSN
+address = "postgresql://postgres:HXQFjrGICvdVZnnJFCZPGQkGMVzedqRz@maglev.proxy.rlwy.net:19628/railway?sslmode=disable"
 
-# Ensure that this database has been created in Postgres.
-database = "listmonk"
-
+# 其他数据库连接参数
 ssl_mode = "disable"
 max_open = 25
 max_idle = 25
 max_lifetime = "300s"
 
-# Optional space separated Postgres DSN params. eg: "application_name=listmonk gssencmode=disable"
+# 可选的 PostgreSQL 连接参数
 params = ""

@@ -10,7 +10,7 @@ user = "postgres"
 password = "HXQFjrGICvdVZnnJFCZPGQkGMVzedqRz"
 database = "railway"
 # 其他数据库连接参数
-ssl_mode = "disable"
+ssl_mode = "require"
 max_open = 25
 max_idle = 25
 max_lifetime = "300s"

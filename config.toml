@@ -4,9 +4,11 @@ address = "0.0.0.0:9000"
 
 # Database.
 [db]
-# 直接使用 Railway 提供的 PostgreSQL DSN
-address = "postgresql://postgres:HXQFjrGICvdVZnnJFCZPGQkGMVzedqRz@maglev.proxy.rlwy.net:19628/railway?sslmode=disable"
-
+host = "maglev.proxy.rlwy.net"
+port = 19628
+user = "postgres"
+password = "HXQFjrGICvdVZnnJFCZPGQkGMVzedqRz"
+database = "railway"
 # 其他数据库连接参数
 ssl_mode = "disable"
 max_open = 25

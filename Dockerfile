@@ -1,26 +1,37 @@
+# 使用 Golang 构建 Listmonk
+FROM golang:1.20 AS builder
+
+# 设置工作目录
+WORKDIR /app
+COPY . .
+
+# 编译 Listmonk
+RUN go build -o listmonk
+
+# 运行环境：Alpine Linux
 FROM alpine:latest
 
-# Install dependencies
+# 安装依赖
 RUN apk --no-cache add ca-certificates tzdata shadow su-exec
 
-# Set the working directory
+# 设置工作目录
 WORKDIR /listmonk
 
-# Copy only the necessary files
-COPY listmonk .
+# 复制编译后的二进制文件
+COPY --from=builder /app/listmonk .
 COPY config.toml.sample config.toml
 
-# Copy the entrypoint script
+# 复制 entrypoint 脚本
 COPY docker-entrypoint.sh /usr/local/bin/
 
-# Make the entrypoint script executable
+# 赋予执行权限
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
-# Expose the application port
+# 暴露应用端口
 EXPOSE 9000
 
-# Set the entrypoint
+# 设置 entrypoint
 ENTRYPOINT ["docker-entrypoint.sh"]
 
-# Define the command to run the application
+# 运行 Listmonk
 CMD ["./listmonk"]
